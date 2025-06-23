@@ -85,7 +85,8 @@ http://localhost:3100
 
 ## 🧑‍💻 Developer
 
-**Name:** Your Name  
+**Name:** Sonia Khatun
+  
 **GitHub:** [github.com/Sonia66Hub](https://github.com/Sonia66Hub)
 
 ---
