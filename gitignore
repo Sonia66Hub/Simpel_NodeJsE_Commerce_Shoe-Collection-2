@@ -1,0 +1,37 @@
+# Node.js modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Environment variables
+.env
+
+# Uploaded files
+uploads/
+*.zip
+
+# Editor & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Build output
+dist/
+build/

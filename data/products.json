@@ -1,0 +1,51 @@
+[
+  {
+    "id": "PROD_1",
+    "product_title": "BlackSnekars",
+    "product_price": "1850",
+    "product_description": "BlackSnekars",
+    "image_path": "uploads/Product1.jpg"
+  },
+  {
+    "id": "PROD_2",
+    "product_title": "Blue Sneakers",
+    "product_price": "1950",
+    "product_description": "Blue Sneakers",
+    "image_path": "uploads/Product2.jpg"
+  },
+  {
+    "id": "PROD_3",
+    "product_title": "Olive Snickers ",
+    "product_price": "1900",
+    "product_description": "Olive Snickers ",
+    "image_path": "uploads/Product3.jpg"
+  },
+  {
+    "id": "PROD_4",
+    "product_title": "Black Lofar",
+    "product_price": "2098",
+    "product_description": "Black Lofar",
+    "image_path": "uploads/Product4.jpg"
+  },
+  {
+    "id": "PROD_5",
+    "product_title": "Brown Half Shoe",
+    "product_price": "2100",
+    "product_description": "Brown Half Shoe",
+    "image_path": "uploads/Product5.JPG"
+  },
+  {
+    "id": "PROD_6",
+    "product_title": "Casual Shoe",
+    "product_price": "1750",
+    "product_description": "Casual Shoe",
+    "image_path": "uploads/Product6.jpg"
+  },
+  {
+    "id": "PROD_1732677944300_499",
+    "product_title": "dfsz",
+    "product_price": "234",
+    "product_description": "vgfchbn x",
+    "image_path": "uploads/product-1732677944297.jpg"
+  }
+]

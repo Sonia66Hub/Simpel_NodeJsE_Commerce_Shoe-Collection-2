@@ -1,0 +1,306 @@
+<%- include("layouts/header.ejs") %>
+<main>
+  <button id="openChatButton">
+    <img src="images\imagesChat.png" alt="chat icon" />
+  </button>
+  <div class="chat-container" id="chatContainer" style="display: none">
+    <div class="message-container" id="messages"></div>
+
+    <div class="message">
+      <input type="text" placeholder="Type your message..." id="messageInput" />
+      <button id="sendMessageButton" onclick="sendMessage()">Send</button>
+    </div>
+    <button id="closeChatButton">X</button>
+  </div>
+
+  <div class="banner_section layout_padding">
+    <div class="container-fluid">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="banner_taital">
+                  Populer Collection <br>
+                  <span style="color: #ecad15">Offer 25% off</span>
+                </h1>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="/images/PageShow1.jpg" /></div>
+              </div>
+            </div>
+            <br />
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <br /><br />
+                <h1 class="banner_taital">
+                  The Best Shoe
+                  <span style="color: #ecad15"><br/>You can find</span>
+                </h1>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/PageShow2.jpg" /></div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <br />
+                <h1 class="banner_taital">
+                  <br> New Shoe Design 
+                  <span style="color: #f4bc3be7"><br/>Upto 40% Off</span>
+                </h1>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/PageShow3.jpg" /></div>
+              </div>
+              
+            </div>
+            <br />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#main_slider"
+          role="button"
+          data-slide="prev"
+        >
+          <i class=""><img src="images\Licon.png" /></i>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#main_slider"
+          role="button"
+          data-slide="next"
+        >
+          <i class=""><img src="images/Ricon.png" /></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--banner section end -->
+  <div class="vegetables_section layout_padding">
+    <div class="container">
+      <h1 class="about_taital">Our Products</h1>
+      <p class="lorem_text">
+        Our boys' shoes combine comfort, durability, and style, crafted with lightweight, 
+        breathable materials and anti-slip soles for maximum safety and support during every adventure. 
+        Featuring trendy designs, vibrant colors, and various closure options like slip-ons, straps, and lace-ups, they’re perfect for school, sports, or casual outings.
+         Available in a wide range of sizes to fit toddlers, kids, and teens, these shoes are easy to clean and built to last, ensuring both practicality and fashion in every step.
+      </p>
+      <div class="vegetables_section_2 layout_padding">
+        <div class="row">
+          <% products.forEach(product => { %>
+          <div class="col-md-4">
+            <div class="box_section">
+              <div>
+                <a href="/product/<%= product.id %>"
+                  ><img
+                    class="single_product_img"
+                    src="<%= product.image_path %>"
+                    alt="%= product.product_title %"
+                /></a>
+              </div>
+              <h2 class="dolor_text"><%= product.product_price %> TK</h2>
+              <a href="/product/<%= product.id %>"
+                ><h2 class="dolor_text"><%= product.product_title %></h2></a
+              >
+
+              <form action="/cart/add" method="POST" class="text-center">
+                <input
+                  type="hidden"
+                  name="productId"
+                  value="<%= product.id %>"
+                />
+                <button type="submit" class="btn btn-lg btn-dark">
+                  Add to Cart
+                </button>
+              </form>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--about section start -->
+  <div class="about_section layout_padding">
+    <div class="container" style="text-align: center;">
+    <div class="image_2"><img src="images/AboutOurShoe.jpg" /></div>
+    <h1 class="about_taital">About Our Shoe</h1>
+    <p class="lorem_text">
+      Welcome to SoleStyle, where comfort meets style! At SoleStyle, 
+      we believe that shoes are more than just a necessity; 
+      they are a reflection of your personality and an essential part of your lifestyle. 
+      Whether you're hitting the gym, exploring the great outdoors, or making a bold statement at a special event, 
+      we have the perfect pair to elevate your every step.
+    </p>
+  </div>
+  <br>
+  <div class="container"> <img src="images/WalkWithUS.jpg" /></div>
+<div class="about_section layout_padding"> 
+ <br>
+ <h1 class="about_taital">Our Mission</h1>
+  <p class="lorem_text" style="text-align: center;">
+    Our mission is to provide high-quality, fashionable, and comfortable footwear for everyone. 
+    We prioritize innovation, sustainable practices, and customer satisfaction to deliver shoes that not only look good but feel great too.
+  </p>
+</div>
+<!--about section End -->
+
+<!--Our Mission Section start -->
+<div class="row">
+  <!-- Left Column -->
+  <div class="col-md-6">
+    <div class="choose_section layout_padding">
+      <h1 class="about_taital">Why Choose Us</h1>
+      <p class="lorem_text">
+        <b>Premium Quality:</b> Our shoes are crafted with the finest materials to ensure durability and comfort. <br>
+        <b>Wide Selection:</b> From casual sneakers to formal footwear, we've got styles for every occasion. <br>
+        <b>Affordable Prices:</b> Trendy shoes shouldn't break the bank. We provide top-notch quality at competitive prices. <br>
+        <b>Sustainability:</b> We’re committed to eco-friendly practices, incorporating sustainable materials wherever possible.
+      </p>
+    </div>
+  </div>
+  <!-- Right Column -->
+  <div class="col-md-6">
+    <div class="choose_section layout_padding">
+      <h1 class="about_taital">Our Story</h1>
+      <p class="lorem_text">
+        Founded by passionate shoe enthusiasts, SoleStyle started with a vision to redefine the shoe-shopping experience. 
+        What began as a small collection of handpicked designs has grown into a global brand loved by thousands of loyal customers. 
+        Our journey is driven by innovation, ensuring every pair of shoes combines style with functionality. 
+        With a commitment to quality and sustainability, we aim to make every step you take a confident and responsible one.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+  <!--Our Mission section end -->
+
+  
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Column -->
+      <div class="col-md-6">
+        <div class="contact_section layout_padding">
+          <div class="image_2">
+            <img src="images/ShowStore.jpg" alt="Shoe Store" style="width: 100%; height: auto; border-radius: 8px;" />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right Column -->
+      <div class="col-md-6">
+        <div class="choose_section layout_padding">
+          <h1 class="about_taital">Join Our Community</h1>
+          <p class="lorem_text">
+            When you shop with SoleStyle, you’re joining a community of trendsetters who value comfort and style. 
+            Follow us on social media to stay updated on the latest trends, exclusive discounts, and inspiring stories from our customers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--contact section start -->
+   <div class="container">
+  <h1 class="about_taital">Contact Us</h1>
+  <div class="row">
+    <!-- Left Column: Contact Form -->
+    <div class="col-md-6">
+      <div class="mail_sectin" style="margin-left: 20px;">
+        <input
+          type="text"
+          class="email-bt"
+          placeholder="Your Name"
+          name="Name"
+        />
+        <input
+          type="text"
+          class="email-bt"
+          placeholder="Email"
+          name="Email"
+        />
+        <input
+          type="text"
+          class="email-bt"
+          placeholder="Phone Number"
+          name="Phone"
+        />
+        <textarea
+          class="massage-bt"
+          placeholder="Message"
+          rows="5"
+          id="comment"
+          name="Message"
+        ></textarea>
+        <div class="send_bt"><a href="#">Send</a></div>
+      </div>
+    </div>
+      
+        <div class="col-md-6">
+          <div class="map_main">
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3652.807735154225!2d90.41793589473266!3d23.718559009749015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1732543454386!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const socket = io();
+      const messagesDiv = document.getElementById("messages");
+
+      function addClassesToMessages() {
+        var messages = messagesDiv.querySelectorAll("p");
+        messages.forEach(function (message, index) {
+          if (index % 2 === 0) {
+            message.classList.add("even");
+            message.classList.remove("odd");
+          } else {
+            message.classList.add("odd");
+            message.classList.remove("even");
+          }
+        });
+      }
+
+      socket.on("message", (message) => {
+        messagesDiv.innerHTML += `<p>${message}</p>`;
+        addClassesToMessages();
+      });
+
+      function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const message = messageInput.value;
+        socket.emit("message", message);
+        messageInput.value = "";
+      }
+
+      const openChatButton = document.getElementById("openChatButton");
+      const closeChatButton = document.getElementById("closeChatButton");
+      const chatContainer = document.getElementById("chatContainer");
+
+      openChatButton.addEventListener("click", () => {
+        chatContainer.style.display = "block";
+      });
+
+      closeChatButton.addEventListener("click", () => {
+        chatContainer.style.display = "none";
+      });
+
+      const sendMessageButton = document.getElementById("sendMessageButton");
+      sendMessageButton.addEventListener("click", sendMessage);
+    });
+  </script>
+</main>
+<%- include("layouts/footer.ejs") %>
